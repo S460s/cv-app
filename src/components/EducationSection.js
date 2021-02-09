@@ -3,7 +3,8 @@ import React from 'react';
 function SavedText(props) {
 	const { schoolName, study, from, to, handleEdit } = props;
 	return (
-		<div>
+		<div className='section'>
+			<h2>Educational Section</h2>
 			<p>School Name: {schoolName}</p>
 			<p>Study: {study}</p>
 			<p>From: {from}</p>
@@ -54,7 +55,7 @@ class EducationSection extends React.Component {
 		}
 
 		return (
-			<section>
+			<section className='section'>
 				<h2>Educational Section</h2>
 				<form action='' onSubmit={this.handleSubmit}>
 					<input

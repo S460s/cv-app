@@ -3,7 +3,8 @@ import React from 'react';
 function SavedText(props) {
 	const { companyName, position, from, to, tasks, handleEdit } = props;
 	return (
-		<div>
+		<div className='section'>
+			<h2>Expirience Section</h2>
 			<p>Company Name: {companyName}</p>
 			<p>Position: {position}</p>
 			<p>From: {from}</p>
@@ -58,7 +59,7 @@ class ExpirienceSection extends React.Component {
 		}
 
 		return (
-			<section>
+			<section className='section'>
 				<h2>Expirience Section</h2>
 				<form action='' onSubmit={this.handleSubmit}>
 					<input
