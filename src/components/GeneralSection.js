@@ -1,5 +1,4 @@
 import React from 'react';
-import './../styles/GeneralSection.css';
 function SavedText(props) {
 	const { name, email, phone, handleClick } = props;
 	return (

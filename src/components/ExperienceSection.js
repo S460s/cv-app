@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './../styles/forms.css';
 function SavedText(props) {
 	const { companyName, position, from, to, tasks, handleEdit } = props;
 	return (
@@ -59,53 +59,69 @@ class ExpirienceSection extends React.Component {
 		}
 
 		return (
-			<section className='section'>
-				<form action='' onSubmit={this.handleSubmit}>
-					<input
-						type='text'
-						placeholder='Company Name'
-						name='companyName'
-						onChange={this.handleChange}
-						value={companyName}
-						required
-					/>
-					<input
-						type='text'
-						placeholder='Position Title'
-						name='position'
-						onChange={this.handleChange}
-						value={position}
-						required
-					/>
-					<input
-						type='date'
-						name='from'
-						placeholder='From'
-						onChange={this.handleChange}
-						value={from}
-						required
-					/>
-					<input
-						type='date'
-						name='to'
-						placeholder='To'
-						onChange={this.handleChange}
-						value={to}
-						required
-					/>
+			<section>
+				<form
+					action=''
+					className='section xpSection'
+					onSubmit={this.handleSubmit}>
+					<label>
+						<p>Company Name</p>
+						<input
+							type='text'
+							placeholder='Company Name'
+							name='companyName'
+							onChange={this.handleChange}
+							value={companyName}
+							required
+						/>
+					</label>
+
+					<label>
+						<p>Position Title</p>
+						<input
+							type='text'
+							placeholder='Position Title'
+							name='position'
+							onChange={this.handleChange}
+							value={position}
+							required
+						/>
+					</label>
+
+					<label>
+						<p>From</p>
+						<input
+							type='date'
+							name='from'
+							placeholder='From'
+							onChange={this.handleChange}
+							value={from}
+							required
+						/>
+					</label>
+
+					<label>
+						<p>To</p>
+						<input
+							type='date'
+							name='to'
+							placeholder='To'
+							onChange={this.handleChange}
+							value={to}
+							required
+						/>
+					</label>
 					<textarea
 						name='tasks'
-						id=''
-						cols='30'
-						rows='10'
+						className='tasks'
 						placeholder='Main Tasks'
 						onChange={this.handleChange}
 						value={tasks}
 						required
 					/>
-
-					<button>Save</button>
+					<button className='formBtn'>Save</button>
 					<button
+						className='formBtn'
 						type='button'
 						onClick={() => handleDelete('experienceIds', id)}>
 						Delete

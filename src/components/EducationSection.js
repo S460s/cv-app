@@ -1,5 +1,5 @@
 import React from 'react';
-import './../styles/EducationSection.css';
+import './../styles/forms.css';
 function SavedText(props) {
 	const { schoolName, study, from, to, handleEdit } = props;
 	return (
@@ -69,24 +69,22 @@ class EducationSection extends React.Component {
 							required
 						/>
 					</label>
-					<label htmlFor='study'>
+					<label>
 						<p>Title of Study</p>
 						<input
 							type='text'
 							placeholder='Title of study'
 							name='study'
-							id='study'
 							onChange={this.handleChange}
 							value={study}
 							required
 						/>
 					</label>
-					<label htmlFor='from'>
+					<label>
 						<p>From</p>
 						<input
 							type='date'
 							name='from'
-							id='from'
 							placeholder='From'
 							onChange={this.handleChange}
 							value={from}
@@ -94,20 +92,20 @@ class EducationSection extends React.Component {
 						/>
 					</label>
 
-					<label htmlFor='to'>
+					<label>
 						<p>To</p>
 						<input
 							type='date'
 							name='to'
-							id='to'
 							placeholder='To'
 							onChange={this.handleChange}
 							value={to}
 							required
 						/>
 					</label>
-					<button>Save</button>
+					<button className='formBtn'>Save</button>
 					<button
+						className='formBtn'
 						type='button'
 						onClick={() => handleDelete('educationIds', id)}>
 						Delete
