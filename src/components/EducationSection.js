@@ -1,5 +1,4 @@
 import React from 'react';
-import './../styles/forms.css';
 function SavedText(props) {
 	const { schoolName, study, from, to, handleEdit } = props;
 	return (
@@ -8,7 +7,9 @@ function SavedText(props) {
 			<p>Study: {study}</p>
 			<p>From: {from}</p>
 			<p>To: {to}</p>
-			<button onClick={handleEdit}>Edit</button>
+			<button className='formBtn generalBtn' onClick={handleEdit}>
+				Edit
+			</button>
 		</div>
 	);
 }
@@ -58,7 +59,7 @@ class EducationSection extends React.Component {
 			<section>
 				<form className='section' action='' onSubmit={this.handleSubmit}>
 					<label htmlFor='schoolName'>
-						<p>School Name</p>
+						<p>School Name:</p>
 						<input
 							type='text'
 							placeholder='School Name'
@@ -70,7 +71,7 @@ class EducationSection extends React.Component {
 						/>
 					</label>
 					<label>
-						<p>Title of Study</p>
+						<p>Title of Study:</p>
 						<input
 							type='text'
 							placeholder='Title of study'
@@ -81,7 +82,7 @@ class EducationSection extends React.Component {
 						/>
 					</label>
 					<label>
-						<p>From</p>
+						<p>From:</p>
 						<input
 							type='date'
 							name='from'
@@ -93,7 +94,7 @@ class EducationSection extends React.Component {
 					</label>
 
 					<label>
-						<p>To</p>
+						<p>To:</p>
 						<input
 							type='date'
 							name='to'

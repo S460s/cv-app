@@ -1,5 +1,4 @@
 import React from 'react';
-import './../styles/forms.css';
 function SavedText(props) {
 	const { companyName, position, from, to, tasks, handleEdit } = props;
 	return (
@@ -9,7 +8,9 @@ function SavedText(props) {
 			<p>From: {from}</p>
 			<p>To: {to}</p>
 			<p>Main task/s: {tasks}</p>
-			<button onClick={handleEdit}>Edit</button>
+			<button className='formBtn generalBtn' onClick={handleEdit}>
+				Edit
+			</button>
 		</div>
 	);
 }
@@ -65,7 +66,7 @@ class ExpirienceSection extends React.Component {
 					className='section xpSection'
 					onSubmit={this.handleSubmit}>
 					<label>
-						<p>Company Name</p>
+						<p>Company Name:</p>
 						<input
 							type='text'
 							placeholder='Company Name'
@@ -77,7 +78,7 @@ class ExpirienceSection extends React.Component {
 					</label>
 
 					<label>
-						<p>Position Title</p>
+						<p>Position Title:</p>
 						<input
 							type='text'
 							placeholder='Position Title'
@@ -89,7 +90,7 @@ class ExpirienceSection extends React.Component {
 					</label>
 
 					<label>
-						<p>From</p>
+						<p>From:</p>
 						<input
 							type='date'
 							name='from'
@@ -101,7 +102,7 @@ class ExpirienceSection extends React.Component {
 					</label>
 
 					<label>
-						<p>To</p>
+						<p>To:</p>
 						<input
 							type='date'
 							name='to'

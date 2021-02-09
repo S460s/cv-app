@@ -1,13 +1,15 @@
 import React from 'react';
 function SavedText(props) {
-	const { name, email, phone, handleClick } = props;
+	const { firstName, lastName, email, phone, handleClick } = props;
 	return (
 		<div className='section'>
-			<h2>General Information</h2>
-			<p>Name: {name}</p>
+			<p>First Name: {firstName}</p>
+			<p>Last Name: {lastName}</p>
 			<p>Email: {email}</p>
 			<p>Phone: {phone}</p>
-			<button onClick={handleClick}>Edit</button>
+			<button className='formBtn generalBtn' onClick={handleClick}>
+				Edit
+			</button>
 		</div>
 	);
 }
@@ -17,7 +19,8 @@ class GeneralSection extends React.Component {
 		super(props);
 		this.state = {
 			editMode: true,
-			name: '',
+			firstName: '',
+			lastName: '',
 			email: '',
 			phone: '',
 		};
@@ -38,12 +41,13 @@ class GeneralSection extends React.Component {
 	}
 
 	render() {
-		const { editMode, name, email, phone } = this.state;
+		const { editMode, firstName, lastName, email, phone } = this.state;
 
 		if (!editMode) {
 			return (
 				<SavedText
-					name={name}
+					firstName={firstName}
+					lastName={lastName}
 					email={email}
 					phone={phone}
 					handleClick={this.handleSubmit}
@@ -53,33 +57,56 @@ class GeneralSection extends React.Component {
 
 		return (
 			<section className='generalSection'>
-				<h2>General Information</h2>
-				<form action='' onSubmit={this.handleSubmit}>
-					<input
-						type='text'
-						placeholder='Name'
-						name='name'
-						onChange={this.handleChange}
-						value={name}
-						required
-					/>
-					<input
-						type='email'
-						placeholder='example@gmail.com'
-						name='email'
-						onChange={this.handleChange}
-						value={email}
-						required
-					/>
-					<input
-						type='tel'
-						name='phone'
-						placeholder='123-456-7890'
-						onChange={this.handleChange}
-						value={phone}
-						required
-					/>
-					<button type='submit'>Save</button>
+				<form className='section' action='' onSubmit={this.handleSubmit}>
+					<label>
+						First Name
+						<input
+							type='text'
+							placeholder='First Name'
+							name='firstName'
+							onChange={this.handleChange}
+							value={firstName}
+							required
+						/>
+					</label>
+
+					<label>
+						Last Name
+						<input
+							type='text'
+							placeholder='Last Name'
+							name='lastName'
+							onChange={this.handleChange}
+							value={lastName}
+							required
+						/>
+					</label>
+
+					<label>
+						Email
+						<input
+							type='email'
+							placeholder='example@gmail.com'
+							name='email'
+							onChange={this.handleChange}
+							value={email}
+							required
+						/>
+					</label>
+					<label>
+						Phone Number
+						<input
+							type='tel'
+							name='phone'
+							placeholder='123-456-7890'
+							onChange={this.handleChange}
+							value={phone}
+							required
+						/>
+					</label>
+					<button className='formBtn generalBtn' type='submit'>
+						Save
+					</button>
 				</form>
 			</section>
 		);

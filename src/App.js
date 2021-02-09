@@ -4,6 +4,7 @@ import EducationSection from './components/EducationSection';
 import ExpirienceSection from './components/ExperienceSection';
 import GeneralSection from './components/GeneralSection';
 import './styles/App.css';
+import './styles/forms.css';
 
 class App extends React.Component {
 	constructor(props) {
@@ -47,6 +48,7 @@ class App extends React.Component {
 					<h1 className='title'>CV-App with React</h1>
 				</header>
 				<main>
+					<h2 className='subTitle'>General Information</h2>
 					<GeneralSection />
 					<div>
 						<h2 className='subTitle'>Educational Experience</h2>
