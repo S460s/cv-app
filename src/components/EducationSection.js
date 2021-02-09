@@ -58,7 +58,7 @@ class EducationSection extends React.Component {
 			<section>
 				<form className='section' action='' onSubmit={this.handleSubmit}>
 					<label htmlFor='schoolName'>
-						School Name
+						<p>School Name</p>
 						<input
 							type='text'
 							placeholder='School Name'
@@ -69,22 +69,24 @@ class EducationSection extends React.Component {
 							required
 						/>
 					</label>
-					<label htmlFor=''>
-						Title of Study
+					<label htmlFor='study'>
+						<p>Title of Study</p>
 						<input
 							type='text'
 							placeholder='Title of study'
 							name='study'
+							id='study'
 							onChange={this.handleChange}
 							value={study}
 							required
 						/>
 					</label>
-					<label htmlFor=''>
-						From
+					<label htmlFor='from'>
+						<p>From</p>
 						<input
 							type='date'
 							name='from'
+							id='from'
 							placeholder='From'
 							onChange={this.handleChange}
 							value={from}
@@ -92,11 +94,12 @@ class EducationSection extends React.Component {
 						/>
 					</label>
 
-					<label htmlFor=''>
-						To
+					<label htmlFor='to'>
+						<p>To</p>
 						<input
 							type='date'
 							name='to'
+							id='to'
 							placeholder='To'
 							onChange={this.handleChange}
 							value={to}

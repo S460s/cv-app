@@ -14,7 +14,14 @@ main {
 	text-align: center;
 }
 
-.section {
-	border: black solid 2px;
+.subTitle {
+	text-align: center;
 	margin-top: 20px;
+	margin-bottom: 10px;
+}
+.addBtn {
+	display: block;
+	margin: auto;
+	width: 30%;
+	height: 3vh;
 }

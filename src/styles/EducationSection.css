@@ -1,24 +1,25 @@
 .section {
-	height: 300px;
+	height: 200px;
 	display: grid;
 	grid-template-columns: repeat(2, 50%);
 	grid-template-rows: repeat(3, auto);
 	justify-items: center;
 	align-items: center;
-}
-
-.section > input {
-	width: 80%;
-	height: 40%;
+	padding: 5px;
 }
 
 .section > label {
-	display: grid;
-	grid-template-rows: repeat(2, 50%);
-	justify-items: start;
+	width: 90%;
+	height: 100%;
+	margin: 10px;
+}
+label > input {
+	width: 90%;
+	height: 40%;
+	margin-top: 5px;
 }
 
 .section > button {
 	width: 50%;
-	height: 30%;
+	height: 100%;
 }
