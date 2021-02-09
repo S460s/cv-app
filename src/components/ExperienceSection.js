@@ -4,6 +4,7 @@ class ExpirienceSection extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			editMode: true,
 			companyName: '',
 			position: '',
 			from: '',
