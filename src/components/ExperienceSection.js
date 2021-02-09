@@ -1,5 +1,19 @@
 import React from 'react';
 
+function SavedText(props) {
+	const { companyName, position, from, to, tasks, handleEdit } = props;
+	return (
+		<div>
+			<p>Company Name: {companyName}</p>
+			<p>Position: {position}</p>
+			<p>From: {from}</p>
+			<p>To: {to}</p>
+			<p>Main task/s: {tasks}</p>
+			<button onClick={handleEdit}>Edit</button>
+		</div>
+	);
+}
+
 class ExpirienceSection extends React.Component {
 	constructor(props) {
 		super(props);
@@ -22,9 +36,27 @@ class ExpirienceSection extends React.Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
+		this.setState((prevState) => {
+			return { editMode: !prevState.editMode };
+		});
 	}
 
 	render() {
+		const { editMode, companyName, position, from, to, tasks } = this.state;
+
+		if (!editMode) {
+			return (
+				<SavedText
+					companyName={companyName}
+					position={position}
+					from={from}
+					to={to}
+					tasks={tasks}
+					handleEdit={this.handleSubmit}
+				/>
+			);
+		}
+
 		return (
 			<section>
 				<h2>Expirience Section</h2>
@@ -34,28 +66,28 @@ class ExpirienceSection extends React.Component {
 						placeholder='Company Name'
 						name='companyName'
 						onChange={this.handleChange}
-						value={this.state.companyName}
+						value={companyName}
 					/>
 					<input
 						type='text'
 						placeholder='Position Title'
 						name='position'
 						onChange={this.handleChange}
-						value={this.state.position}
+						value={position}
 					/>
 					<input
 						type='date'
 						name='from'
 						placeholder='From'
 						onChange={this.handleChange}
-						value={this.state.from}
+						value={from}
 					/>
 					<input
 						type='date'
 						name='to'
 						placeholder='To'
 						onChange={this.handleChange}
-						value={this.state.to}
+						value={to}
 					/>
 					<textarea
 						name='tasks'
@@ -64,7 +96,7 @@ class ExpirienceSection extends React.Component {
 						rows='10'
 						placeholder='Main Tasks'
 						onChange={this.handleChange}
-						value={this.state.tasks}
+						value={tasks}
 					/>
 
 					<button>Save</button>
