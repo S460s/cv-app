@@ -10,6 +10,7 @@ class EducationSection extends React.Component {
 			to: '',
 		};
 		this.handleChange = this.handleChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
 	handleChange(e) {
@@ -17,39 +18,46 @@ class EducationSection extends React.Component {
 		this.setState({ [name]: value });
 	}
 
+	handleSubmit(e) {
+		e.preventDefault();
+	}
+
 	render() {
 		return (
-			<div>
+			<section>
 				<h2>Educational Section</h2>
-				<input
-					type='text'
-					placeholder='School Name'
-					name='schoolName'
-					onChange={this.handleChange}
-					value={this.state.schoolName}
-				/>
-				<input
-					type='text'
-					placeholder='Title of study'
-					name='study'
-					onChange={this.handleChange}
-					value={this.state.study}
-				/>
-				<input
-					type='date'
-					name='from'
-					placeholder='From'
-					onChange={this.handleChange}
-					value={this.state.from}
-				/>
-				<input
-					type='date'
-					name='to'
-					placeholder='To'
-					onChange={this.handleChange}
-					value={this.state.to}
-				/>
-			</div>
+				<form action='' onSubmit={this.handleSubmit}>
+					<input
+						type='text'
+						placeholder='School Name'
+						name='schoolName'
+						onChange={this.handleChange}
+						value={this.state.schoolName}
+					/>
+					<input
+						type='text'
+						placeholder='Title of study'
+						name='study'
+						onChange={this.handleChange}
+						value={this.state.study}
+					/>
+					<input
+						type='date'
+						name='from'
+						placeholder='From'
+						onChange={this.handleChange}
+						value={this.state.from}
+					/>
+					<input
+						type='date'
+						name='to'
+						placeholder='To'
+						onChange={this.handleChange}
+						value={this.state.to}
+					/>
+					<button>Save</button>
+				</form>
+			</section>
 		);
 	}
 }

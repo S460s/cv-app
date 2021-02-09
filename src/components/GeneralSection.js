@@ -9,6 +9,7 @@ class GeneralSection extends React.Component {
 			phone: '',
 		};
 		this.handleChange = this.handleChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
 	handleChange(e) {
@@ -16,32 +17,39 @@ class GeneralSection extends React.Component {
 		this.setState({ [name]: value });
 	}
 
+	handleSubmit(e) {
+		e.preventDefault();
+	}
+
 	render() {
 		return (
-			<div>
+			<section>
 				<h2>General Information</h2>
-				<input
-					type='text'
-					placeholder='Name'
-					name='name'
-					onChange={this.handleChange}
-					value={this.state.name}
-				/>
-				<input
-					type='email'
-					placeholder='example@gmail.com'
-					name='email'
-					onChange={this.handleChange}
-					value={this.state.email}
-				/>
-				<input
-					type='tel'
-					name='phone'
-					placeholder='123-456-7890'
-					onChange={this.handleChange}
-					value={this.state.phone}
-				/>
-			</div>
+				<form action='' onSubmit={this.handleSubmit}>
+					<input
+						type='text'
+						placeholder='Name'
+						name='name'
+						onChange={this.handleChange}
+						value={this.state.name}
+					/>
+					<input
+						type='email'
+						placeholder='example@gmail.com'
+						name='email'
+						onChange={this.handleChange}
+						value={this.state.email}
+					/>
+					<input
+						type='tel'
+						name='phone'
+						placeholder='123-456-7890'
+						onChange={this.handleChange}
+						value={this.state.phone}
+					/>
+					<button>Save</button>
+				</form>
+			</section>
 		);
 	}
 }
