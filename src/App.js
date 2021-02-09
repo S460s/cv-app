@@ -8,7 +8,9 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
-				<p className='title'>Hello World!</p>
+				<header>
+					<h1 className='title'>CV-App</h1>
+				</header>
 				<GeneralSection />
 				<EducationSection />
 				<ExpirienceSection />
