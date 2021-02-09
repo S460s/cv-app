@@ -1,6 +1,6 @@
 import React from 'react';
 import EducationSection from './components/EducationSection';
-import ExpirienceSection from './components/experienceSection';
+import ExpirienceSection from './components/ExperienceSection';
 import GeneralSection from './components/GeneralSection';
 import './styles/App.css';
 
