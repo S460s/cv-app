@@ -44,6 +44,7 @@ class ExpirienceSection extends React.Component {
 
 	render() {
 		const { editMode, companyName, position, from, to, tasks } = this.state;
+		const { id, handleDelete } = this.props;
 
 		if (!editMode) {
 			return (
@@ -101,6 +102,11 @@ class ExpirienceSection extends React.Component {
 					/>
 
 					<button>Save</button>
+					<button
+						type='button'
+						onClick={() => handleDelete('experienceIds', id)}>
+						Delete
+					</button>
 				</form>
 			</section>
 		);

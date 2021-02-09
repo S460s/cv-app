@@ -9,35 +9,38 @@ class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			eduSections: [],
-			expSections: [],
+			educationIds: [],
+			experienceIds: [],
 		};
 		this.handleClick = this.handleClick.bind(this);
+		this.handleDelete = this.handleDelete.bind(this);
 	}
 
 	handleClick(type) {
-		if (type === 'xp') {
-			this.setState((prevState) => {
-				return {
-					expSections: [
-						...prevState.expSections,
-						<ExpirienceSection key={uniqid()} />,
-					],
-				};
-			});
-		} else {
-			this.setState((prevState) => {
-				return {
-					eduSections: [
-						...prevState.eduSections,
-						<EducationSection key={uniqid()} />,
-					],
-				};
-			});
-		}
+		this.setState((prevState) => {
+			return {
+				[type]: [...prevState[type], uniqid()],
+			};
+		});
+	}
+
+	handleDelete(type, id) {
+		this.setState((prevState) => {
+			let newList = prevState[type].filter((key) => key !== id);
+			return {
+				[type]: newList,
+			};
+		});
 	}
 
 	render() {
+		const eduComponents = this.state.educationIds.map((id) => (
+			<EducationSection key={id} id={id} handleDelete={this.handleDelete} />
+		));
+		const expComponents = this.state.experienceIds.map((id) => (
+			<ExpirienceSection key={id} id={id} handleDelete={this.handleDelete} />
+		));
+
 		return (
 			<div>
 				<header>
@@ -46,13 +49,13 @@ class App extends React.Component {
 				<GeneralSection />
 				<div>
 					<h2>Educational Experience</h2>
-					{this.state.eduSections}
-					<button onClick={() => this.handleClick('edu')}>Add</button>
+					{eduComponents}
+					<button onClick={() => this.handleClick('educationIds')}>Add</button>
 				</div>
 				<div>
 					<h2>Experience Section</h2>
-					{this.state.expSections}
-					<button onClick={() => this.handleClick('xp')}>Add</button>
+					{expComponents}
+					<button onClick={() => this.handleClick('experienceIds')}>Add</button>
 				</div>
 			</div>
 		);

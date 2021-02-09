@@ -42,6 +42,7 @@ class EducationSection extends React.Component {
 
 	render() {
 		const { editMode, schoolName, study, from, to } = this.state;
+		const { id, handleDelete } = this.props;
 		if (!editMode) {
 			return (
 				<SavedText
@@ -87,6 +88,11 @@ class EducationSection extends React.Component {
 						value={to}
 					/>
 					<button>Save</button>
+					<button
+						type='button'
+						onClick={() => handleDelete('educationIds', id)}>
+						Delete
+					</button>
 				</form>
 			</section>
 		);
