@@ -1,6 +1,6 @@
 import React from 'react';
 
-function SavedHTML(props) {
+function SavedText(props) {
 	const { name, email, phone, handleClick } = props;
 	return (
 		<div>
@@ -42,7 +42,7 @@ class GeneralSection extends React.Component {
 
 		if (!editMode) {
 			return (
-				<SavedHTML
+				<SavedText
 					name={name}
 					email={email}
 					phone={phone}

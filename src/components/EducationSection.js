@@ -1,9 +1,23 @@
 import React from 'react';
 
+function SavedText(props) {
+	const { schoolName, study, from, to, handleEdit } = props;
+	return (
+		<div>
+			<p>School Name: {schoolName}</p>
+			<p>Study: {study}</p>
+			<p>From: {from}</p>
+			<p>To: {to}</p>
+			<button onClick={handleEdit}>Edit</button>
+		</div>
+	);
+}
+
 class EducationSection extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			editMode: true,
 			schoolName: '',
 			study: '',
 			from: '',
@@ -20,9 +34,25 @@ class EducationSection extends React.Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
+		this.setState((prevState) => {
+			return { editMode: !prevState.editMode };
+		});
 	}
 
 	render() {
+		const { editMode, schoolName, study, from, to } = this.state;
+		if (!editMode) {
+			return (
+				<SavedText
+					schoolName={schoolName}
+					study={study}
+					from={from}
+					to={to}
+					handleEdit={this.handleSubmit}
+				/>
+			);
+		}
+
 		return (
 			<section>
 				<h2>Educational Section</h2>
@@ -32,28 +62,28 @@ class EducationSection extends React.Component {
 						placeholder='School Name'
 						name='schoolName'
 						onChange={this.handleChange}
-						value={this.state.schoolName}
+						value={schoolName}
 					/>
 					<input
 						type='text'
 						placeholder='Title of study'
 						name='study'
 						onChange={this.handleChange}
-						value={this.state.study}
+						value={study}
 					/>
 					<input
 						type='date'
 						name='from'
 						placeholder='From'
 						onChange={this.handleChange}
-						value={this.state.from}
+						value={from}
 					/>
 					<input
 						type='date'
 						name='to'
 						placeholder='To'
 						onChange={this.handleChange}
-						value={this.state.to}
+						value={to}
 					/>
 					<button>Save</button>
 				</form>
