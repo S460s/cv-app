@@ -1,10 +1,9 @@
 import React from 'react';
-
+import './../styles/EducationSection.css';
 function SavedText(props) {
 	const { schoolName, study, from, to, handleEdit } = props;
 	return (
 		<div className='section'>
-			<h2>Educational Section</h2>
 			<p>School Name: {schoolName}</p>
 			<p>Study: {study}</p>
 			<p>From: {from}</p>
@@ -56,37 +55,54 @@ class EducationSection extends React.Component {
 		}
 
 		return (
-			<section className='section'>
-				<h2>Educational Section</h2>
-				<form action='' onSubmit={this.handleSubmit}>
-					<input
-						type='text'
-						placeholder='School Name'
-						name='schoolName'
-						onChange={this.handleChange}
-						value={schoolName}
-					/>
-					<input
-						type='text'
-						placeholder='Title of study'
-						name='study'
-						onChange={this.handleChange}
-						value={study}
-					/>
-					<input
-						type='date'
-						name='from'
-						placeholder='From'
-						onChange={this.handleChange}
-						value={from}
-					/>
-					<input
-						type='date'
-						name='to'
-						placeholder='To'
-						onChange={this.handleChange}
-						value={to}
-					/>
+			<section>
+				<form className='section' action='' onSubmit={this.handleSubmit}>
+					<label htmlFor='schoolName'>
+						School Name
+						<input
+							type='text'
+							placeholder='School Name'
+							name='schoolName'
+							id='schoolName'
+							onChange={this.handleChange}
+							value={schoolName}
+							required
+						/>
+					</label>
+					<label htmlFor=''>
+						Title of Study
+						<input
+							type='text'
+							placeholder='Title of study'
+							name='study'
+							onChange={this.handleChange}
+							value={study}
+							required
+						/>
+					</label>
+					<label htmlFor=''>
+						From
+						<input
+							type='date'
+							name='from'
+							placeholder='From'
+							onChange={this.handleChange}
+							value={from}
+							required
+						/>
+					</label>
+
+					<label htmlFor=''>
+						To
+						<input
+							type='date'
+							name='to'
+							placeholder='To'
+							onChange={this.handleChange}
+							value={to}
+							required
+						/>
+					</label>
 					<button>Save</button>
 					<button
 						type='button'

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './../styles/GeneralSection.css';
 function SavedText(props) {
 	const { name, email, phone, handleClick } = props;
 	return (
@@ -53,7 +53,7 @@ class GeneralSection extends React.Component {
 		}
 
 		return (
-			<section className='section'>
+			<section className='generalSection'>
 				<h2>General Information</h2>
 				<form action='' onSubmit={this.handleSubmit}>
 					<input
@@ -62,6 +62,7 @@ class GeneralSection extends React.Component {
 						name='name'
 						onChange={this.handleChange}
 						value={name}
+						required
 					/>
 					<input
 						type='email'
@@ -69,6 +70,7 @@ class GeneralSection extends React.Component {
 						name='email'
 						onChange={this.handleChange}
 						value={email}
+						required
 					/>
 					<input
 						type='tel'
@@ -76,6 +78,7 @@ class GeneralSection extends React.Component {
 						placeholder='123-456-7890'
 						onChange={this.handleChange}
 						value={phone}
+						required
 					/>
 					<button type='submit'>Save</button>
 				</form>

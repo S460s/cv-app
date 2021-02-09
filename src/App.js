@@ -44,19 +44,25 @@ class App extends React.Component {
 		return (
 			<div>
 				<header>
-					<h1 className='title'>CV-App</h1>
+					<h1 className='title'>CV-App with React</h1>
 				</header>
-				<GeneralSection />
-				<div>
-					<h2>Educational Experience</h2>
-					{eduComponents}
-					<button onClick={() => this.handleClick('educationIds')}>Add</button>
-				</div>
-				<div>
-					<h2>Experience Section</h2>
-					{expComponents}
-					<button onClick={() => this.handleClick('experienceIds')}>Add</button>
-				</div>
+				<main>
+					<GeneralSection />
+					<div>
+						<h2>Educational Experience</h2>
+						{eduComponents}
+						<button onClick={() => this.handleClick('educationIds')}>
+							Add
+						</button>
+					</div>
+					<div>
+						<h2>Experience Section</h2>
+						{expComponents}
+						<button onClick={() => this.handleClick('experienceIds')}>
+							Add
+						</button>
+					</div>
+				</main>
 			</div>
 		);
 	}

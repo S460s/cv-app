@@ -1,0 +1,5 @@
+.generalSection {
+	background-color: cornflowerblue;
+	display: flex;
+	flex-direction: column;
+}

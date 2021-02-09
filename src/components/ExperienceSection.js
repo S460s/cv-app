@@ -4,7 +4,6 @@ function SavedText(props) {
 	const { companyName, position, from, to, tasks, handleEdit } = props;
 	return (
 		<div className='section'>
-			<h2>Expirience Section</h2>
 			<p>Company Name: {companyName}</p>
 			<p>Position: {position}</p>
 			<p>From: {from}</p>
@@ -61,7 +60,6 @@ class ExpirienceSection extends React.Component {
 
 		return (
 			<section className='section'>
-				<h2>Expirience Section</h2>
 				<form action='' onSubmit={this.handleSubmit}>
 					<input
 						type='text'
@@ -69,6 +67,7 @@ class ExpirienceSection extends React.Component {
 						name='companyName'
 						onChange={this.handleChange}
 						value={companyName}
+						required
 					/>
 					<input
 						type='text'
@@ -76,6 +75,7 @@ class ExpirienceSection extends React.Component {
 						name='position'
 						onChange={this.handleChange}
 						value={position}
+						required
 					/>
 					<input
 						type='date'
@@ -83,6 +83,7 @@ class ExpirienceSection extends React.Component {
 						placeholder='From'
 						onChange={this.handleChange}
 						value={from}
+						required
 					/>
 					<input
 						type='date'
@@ -90,6 +91,7 @@ class ExpirienceSection extends React.Component {
 						placeholder='To'
 						onChange={this.handleChange}
 						value={to}
+						required
 					/>
 					<textarea
 						name='tasks'
@@ -99,6 +101,7 @@ class ExpirienceSection extends React.Component {
 						placeholder='Main Tasks'
 						onChange={this.handleChange}
 						value={tasks}
+						required
 					/>
 
 					<button>Save</button>
