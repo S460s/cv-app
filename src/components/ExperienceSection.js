@@ -1,19 +1,5 @@
 import React from 'react';
-function SavedText(props) {
-	const { companyName, position, from, to, tasks, handleEdit } = props;
-	return (
-		<div className='section'>
-			<p>Company Name: {companyName}</p>
-			<p>Position: {position}</p>
-			<p>From: {from}</p>
-			<p>To: {to}</p>
-			<p>Main task/s: {tasks}</p>
-			<button className='formBtn generalBtn' onClick={handleEdit}>
-				Edit
-			</button>
-		</div>
-	);
-}
+import TextSection from './TextSection.js';
 
 class ExpirienceSection extends React.Component {
 	constructor(props) {
@@ -48,7 +34,7 @@ class ExpirienceSection extends React.Component {
 
 		if (!editMode) {
 			return (
-				<SavedText
+				<TextSection
 					companyName={companyName}
 					position={position}
 					from={from}

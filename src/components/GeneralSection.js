@@ -1,18 +1,5 @@
 import React from 'react';
-function SavedText(props) {
-	const { firstName, lastName, email, phone, handleClick } = props;
-	return (
-		<div className='section'>
-			<p>First Name: {firstName}</p>
-			<p>Last Name: {lastName}</p>
-			<p>Email: {email}</p>
-			<p>Phone: {phone}</p>
-			<button className='formBtn generalBtn' onClick={handleClick}>
-				Edit
-			</button>
-		</div>
-	);
-}
+import TextSection from './TextSection';
 
 class GeneralSection extends React.Component {
 	constructor(props) {
@@ -45,7 +32,7 @@ class GeneralSection extends React.Component {
 
 		if (!editMode) {
 			return (
-				<SavedText
+				<TextSection
 					firstName={firstName}
 					lastName={lastName}
 					email={email}
@@ -59,7 +46,7 @@ class GeneralSection extends React.Component {
 			<section className='generalSection'>
 				<form className='section' action='' onSubmit={this.handleSubmit}>
 					<label>
-						First Name
+						<p>First Name</p>
 						<input
 							type='text'
 							placeholder='First Name'
@@ -71,7 +58,7 @@ class GeneralSection extends React.Component {
 					</label>
 
 					<label>
-						Last Name
+						<p>Last Name</p>
 						<input
 							type='text'
 							placeholder='Last Name'
@@ -83,7 +70,7 @@ class GeneralSection extends React.Component {
 					</label>
 
 					<label>
-						Email
+						<p>Email</p>
 						<input
 							type='email'
 							placeholder='example@gmail.com'
@@ -94,7 +81,7 @@ class GeneralSection extends React.Component {
 						/>
 					</label>
 					<label>
-						Phone Number
+						<p>Phone Number</p>
 						<input
 							type='tel'
 							name='phone'

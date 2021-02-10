@@ -23,6 +23,6 @@ main {
 .addBtn {
 	display: block;
 	margin: auto;
-	width: 30%;
+	width: 100px;
 	height: 3vh;
 }

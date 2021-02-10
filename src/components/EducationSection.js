@@ -1,18 +1,5 @@
 import React from 'react';
-function SavedText(props) {
-	const { schoolName, study, from, to, handleEdit } = props;
-	return (
-		<div className='section'>
-			<p>School Name: {schoolName}</p>
-			<p>Study: {study}</p>
-			<p>From: {from}</p>
-			<p>To: {to}</p>
-			<button className='formBtn generalBtn' onClick={handleEdit}>
-				Edit
-			</button>
-		</div>
-	);
-}
+import TextSection from './TextSection';
 
 class EducationSection extends React.Component {
 	constructor(props) {
@@ -45,7 +32,7 @@ class EducationSection extends React.Component {
 		const { id, handleDelete } = this.props;
 		if (!editMode) {
 			return (
-				<SavedText
+				<TextSection
 					schoolName={schoolName}
 					study={study}
 					from={from}
