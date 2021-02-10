@@ -37,7 +37,7 @@ class GeneralSection extends React.Component {
 					lastName={lastName}
 					email={email}
 					phone={phone}
-					handleClick={this.handleSubmit}
+					handleEdit={this.handleSubmit}
 				/>
 			);
 		}
@@ -46,7 +46,7 @@ class GeneralSection extends React.Component {
 			<section className='generalSection'>
 				<form className='section' action='' onSubmit={this.handleSubmit}>
 					<label>
-						<p>First Name</p>
+						<p>First Name:</p>
 						<input
 							type='text'
 							placeholder='First Name'
@@ -58,7 +58,7 @@ class GeneralSection extends React.Component {
 					</label>
 
 					<label>
-						<p>Last Name</p>
+						<p>Last Name:</p>
 						<input
 							type='text'
 							placeholder='Last Name'
@@ -70,7 +70,7 @@ class GeneralSection extends React.Component {
 					</label>
 
 					<label>
-						<p>Email</p>
+						<p>Email:</p>
 						<input
 							type='email'
 							placeholder='example@gmail.com'
@@ -81,7 +81,7 @@ class GeneralSection extends React.Component {
 						/>
 					</label>
 					<label>
-						<p>Phone Number</p>
+						<p>Phone Number:</p>
 						<input
 							type='tel'
 							name='phone'

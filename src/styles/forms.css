@@ -8,8 +8,15 @@
 	padding: 5px;
 }
 
+.section > label {
+	width: 90%;
+	height: 100%;
+	margin: 10px;
+}
+
 .textSection {
 	padding-left: 20px;
+	font-size: large;
 }
 
 .xpSection {
@@ -17,10 +24,14 @@
 	height: max-content;
 }
 
-.section > label {
-	width: 90%;
-	height: 100%;
-	margin: 10px;
+.editIcon {
+	float: right;
+	margin-right: 20px;
+	cursor: pointer;
+}
+
+.categoryText {
+	font-weight: bold;
 }
 
 label > input {
@@ -34,11 +45,13 @@ label > input {
 	height: 30px;
 	display: block;
 	margin: auto;
+	margin-bottom: 10px;
 }
 
 .generalBtn {
 	grid-column: 1/3;
 	width: 100px;
+	margin-bottom: 10px;
 }
 
 textarea {

@@ -44,10 +44,8 @@ class App extends React.Component {
 
 		return (
 			<div>
-				<header>
-					<h1 className='title'>CV-App with React</h1>
-				</header>
 				<main>
+					<h1 className='title'>CV-App with React</h1>
 					<h2 className='subTitle'>General Information</h2>
 					<GeneralSection />
 					<div>
