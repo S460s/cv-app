@@ -1,5 +1,5 @@
 import React from 'react';
-import { NoPrint } from 'react-easy-print';
+import { NoPrint, Print } from 'react-easy-print';
 import TextSection from './TextSection';
 
 class GeneralSection extends React.Component {
@@ -45,6 +45,9 @@ class GeneralSection extends React.Component {
 
 		return (
 			<NoPrint>
+				<Print printOnly>
+					<p className='warning'>Fill in the form.</p>
+				</Print>
 				<section className='generalSection'>
 					<form className='section' action='' onSubmit={this.handleSubmit}>
 						<label>

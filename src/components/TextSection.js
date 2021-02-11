@@ -64,7 +64,8 @@ function TextSection(props) {
 					<span className='categoryText'>Study:</span> {props.study}
 				</p>
 				<p>
-					<span className='categoryText'>From: {props.from}</span>
+					<span className='categoryText'>From: </span>
+					{props.from}
 				</p>
 				<p>
 					<span className='categoryText'>To:</span> {props.to}

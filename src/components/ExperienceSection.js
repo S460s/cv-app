@@ -1,5 +1,5 @@
 import React from 'react';
-import { NoPrint } from 'react-easy-print';
+import { Print, NoPrint } from 'react-easy-print';
 import TextSection from './TextSection.js';
 
 class ExpirienceSection extends React.Component {
@@ -48,6 +48,9 @@ class ExpirienceSection extends React.Component {
 
 		return (
 			<NoPrint>
+				<Print printOnly>
+					<p className='warning'>Fill in the form.</p>
+				</Print>
 				<section>
 					<form
 						action=''
