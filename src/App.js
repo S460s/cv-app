@@ -1,4 +1,5 @@
 import React from 'react';
+import PrintProvider, { NoPrint, Print } from 'react-easy-print';
 import uniqid from 'uniqid';
 import EducationSection from './components/EducationSection';
 import ExpirienceSection from './components/ExperienceSection';
@@ -44,29 +45,46 @@ class App extends React.Component {
 
 		return (
 			<div>
-				<main>
-					<h1 className='title'>CV-App with React</h1>
-					<h2 className='subTitle'>General Information</h2>
-					<GeneralSection />
-					<div>
-						<h2 className='subTitle'>Educational Experience</h2>
-						{eduComponents}
-						<button
-							className='addBtn'
-							onClick={() => this.handleClick('educationIds')}>
-							Add
-						</button>
-					</div>
-					<div>
-						<h2 className='subTitle'>Experience Section</h2>
-						{expComponents}
-						<button
-							className='addBtn'
-							onClick={() => this.handleClick('experienceIds')}>
-							Add
-						</button>
-					</div>
-				</main>
+				<PrintProvider>
+					<NoPrint>
+						<main>
+							<h1 className='title'>CV-App with React</h1>
+							<Print>
+								<h2 className='subTitle'>General Information</h2>
+								<GeneralSection />
+							</Print>
+							<div>
+								<Print>
+									<h2 className='subTitle'>Educational Experience</h2>
+									{eduComponents}
+								</Print>
+								<button
+									className='addBtn'
+									onClick={() => this.handleClick('educationIds')}>
+									Add
+								</button>
+							</div>
+							<div>
+								<Print>
+									<h2 className='subTitle'>Experience Section</h2>
+									{expComponents}
+								</Print>
+								<button
+									className='addBtn'
+									onClick={() => this.handleClick('experienceIds')}>
+									Add
+								</button>
+							</div>
+							<button
+								onClick={() => {
+									window.print();
+								}}
+								className='addBtn'>
+								Print
+							</button>
+						</main>
+					</NoPrint>
+				</PrintProvider>
 			</div>
 		);
 	}

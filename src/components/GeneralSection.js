@@ -1,4 +1,5 @@
 import React from 'react';
+import { NoPrint } from 'react-easy-print';
 import TextSection from './TextSection';
 
 class GeneralSection extends React.Component {
@@ -43,59 +44,61 @@ class GeneralSection extends React.Component {
 		}
 
 		return (
-			<section className='generalSection'>
-				<form className='section' action='' onSubmit={this.handleSubmit}>
-					<label>
-						<p>First Name:</p>
-						<input
-							type='text'
-							placeholder='First Name'
-							name='firstName'
-							onChange={this.handleChange}
-							value={firstName}
-							required
-						/>
-					</label>
+			<NoPrint>
+				<section className='generalSection'>
+					<form className='section' action='' onSubmit={this.handleSubmit}>
+						<label>
+							<p>First Name:</p>
+							<input
+								type='text'
+								placeholder='First Name'
+								name='firstName'
+								onChange={this.handleChange}
+								value={firstName}
+								required
+							/>
+						</label>
 
-					<label>
-						<p>Last Name:</p>
-						<input
-							type='text'
-							placeholder='Last Name'
-							name='lastName'
-							onChange={this.handleChange}
-							value={lastName}
-							required
-						/>
-					</label>
+						<label>
+							<p>Last Name:</p>
+							<input
+								type='text'
+								placeholder='Last Name'
+								name='lastName'
+								onChange={this.handleChange}
+								value={lastName}
+								required
+							/>
+						</label>
 
-					<label>
-						<p>Email:</p>
-						<input
-							type='email'
-							placeholder='example@gmail.com'
-							name='email'
-							onChange={this.handleChange}
-							value={email}
-							required
-						/>
-					</label>
-					<label>
-						<p>Phone Number:</p>
-						<input
-							type='tel'
-							name='phone'
-							placeholder='123-456-7890'
-							onChange={this.handleChange}
-							value={phone}
-							required
-						/>
-					</label>
-					<button className='formBtn generalBtn' type='submit'>
-						Save
-					</button>
-				</form>
-			</section>
+						<label>
+							<p>Email:</p>
+							<input
+								type='email'
+								placeholder='example@gmail.com'
+								name='email'
+								onChange={this.handleChange}
+								value={email}
+								required
+							/>
+						</label>
+						<label>
+							<p>Phone Number:</p>
+							<input
+								type='tel'
+								name='phone'
+								placeholder='123-456-7890'
+								onChange={this.handleChange}
+								value={phone}
+								required
+							/>
+						</label>
+						<button className='formBtn generalBtn' type='submit'>
+							Save
+						</button>
+					</form>
+				</section>
+			</NoPrint>
 		);
 	}
 }

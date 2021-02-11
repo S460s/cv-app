@@ -1,4 +1,5 @@
 import React from 'react';
+import { NoPrint } from 'react-easy-print';
 import TextSection from './TextSection';
 
 class EducationSection extends React.Component {
@@ -43,63 +44,65 @@ class EducationSection extends React.Component {
 		}
 
 		return (
-			<section>
-				<form className='section' action='' onSubmit={this.handleSubmit}>
-					<label htmlFor='schoolName'>
-						<p>School Name:</p>
-						<input
-							type='text'
-							placeholder='School Name'
-							name='schoolName'
-							id='schoolName'
-							onChange={this.handleChange}
-							value={schoolName}
-							required
-						/>
-					</label>
-					<label>
-						<p>Title of Study:</p>
-						<input
-							type='text'
-							placeholder='Title of study'
-							name='study'
-							onChange={this.handleChange}
-							value={study}
-							required
-						/>
-					</label>
-					<label>
-						<p>From:</p>
-						<input
-							type='date'
-							name='from'
-							placeholder='From'
-							onChange={this.handleChange}
-							value={from}
-							required
-						/>
-					</label>
+			<NoPrint>
+				<section>
+					<form className='section' action='' onSubmit={this.handleSubmit}>
+						<label htmlFor='schoolName'>
+							<p>School Name:</p>
+							<input
+								type='text'
+								placeholder='School Name'
+								name='schoolName'
+								id='schoolName'
+								onChange={this.handleChange}
+								value={schoolName}
+								required
+							/>
+						</label>
+						<label>
+							<p>Title of Study:</p>
+							<input
+								type='text'
+								placeholder='Title of study'
+								name='study'
+								onChange={this.handleChange}
+								value={study}
+								required
+							/>
+						</label>
+						<label>
+							<p>From:</p>
+							<input
+								type='date'
+								name='from'
+								placeholder='From'
+								onChange={this.handleChange}
+								value={from}
+								required
+							/>
+						</label>
 
-					<label>
-						<p>To:</p>
-						<input
-							type='date'
-							name='to'
-							placeholder='To'
-							onChange={this.handleChange}
-							value={to}
-							required
-						/>
-					</label>
-					<button className='formBtn'>Save</button>
-					<button
-						className='formBtn'
-						type='button'
-						onClick={() => handleDelete('educationIds', id)}>
-						Delete
-					</button>
-				</form>
-			</section>
+						<label>
+							<p>To:</p>
+							<input
+								type='date'
+								name='to'
+								placeholder='To'
+								onChange={this.handleChange}
+								value={to}
+								required
+							/>
+						</label>
+						<button className='formBtn'>Save</button>
+						<button
+							className='formBtn'
+							type='button'
+							onClick={() => handleDelete('educationIds', id)}>
+							Delete
+						</button>
+					</form>
+				</section>
+			</NoPrint>
 		);
 	}
 }

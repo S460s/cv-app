@@ -1,8 +1,13 @@
+import { NoPrint } from 'react-easy-print';
 function TextSection(props) {
 	if (props.firstName) {
 		return (
 			<div className='textSection'>
-				<i className='far fa-edit editIcon' onClick={props.handleEdit}></i>
+				<NoPrint single>
+					<span className='material-icons editIcon' onClick={props.handleEdit}>
+						create
+					</span>
+				</NoPrint>
 				<p>
 					<span className='categoryText'>First Name:</span> {props.firstName}
 				</p>
@@ -20,7 +25,11 @@ function TextSection(props) {
 	} else if (props.companyName) {
 		return (
 			<div className='textSection'>
-				<i className='far fa-edit editIcon' onClick={props.handleEdit}></i>
+				<NoPrint single>
+					<span className='material-icons editIcon' onClick={props.handleEdit}>
+						create
+					</span>
+				</NoPrint>
 				<p>
 					<span className='categoryText'>Company Name:</span>{' '}
 					{props.companyName}
@@ -43,7 +52,11 @@ function TextSection(props) {
 	} else {
 		return (
 			<div className='textSection'>
-				<i className='far fa-edit editIcon' onClick={props.handleEdit}></i>
+				<NoPrint single>
+					<span className='material-icons editIcon' onClick={props.handleEdit}>
+						create
+					</span>
+				</NoPrint>
 				<p>
 					<span className='categoryText'>School Name:</span> {props.schoolName}
 				</p>
@@ -51,7 +64,7 @@ function TextSection(props) {
 					<span className='categoryText'>Study:</span> {props.study}
 				</p>
 				<p>
-					<span className='categoryText'>From:</span>
+					<span className='categoryText'>From: {props.from}</span>
 				</p>
 				<p>
 					<span className='categoryText'>To:</span> {props.to}
