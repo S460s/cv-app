@@ -14,7 +14,7 @@ const ExpirienceSection = (props) => {
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 		setExperienceInfo((prevInfo) => {
-			return { prevInfo, [name]: value };
+			return { ...prevInfo, [name]: value };
 		});
 	};
 
