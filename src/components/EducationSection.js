@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Print, NoPrint } from 'react-easy-print';
+import Input from './Input';
 import TextSection from './TextSection';
 
 const EducationSection = (props) => {
@@ -44,52 +45,38 @@ const EducationSection = (props) => {
 			</Print>
 			<section>
 				<form className='section' action='' onSubmit={handleSubmit}>
-					<label htmlFor='schoolName'>
-						<p>School Name:</p>
-						<input
+						<Input
+							paragraphText="School Name:"
 							type='text'
 							placeholder='School Name'
 							name='schoolName'
-							id='schoolName'
 							onChange={handleChange}
 							value={schoolName}
-							required
 						/>
-					</label>
-					<label>
-						<p>Title of Study:</p>
-						<input
+						<Input
+							paragraphText="Title of Study:"
 							type='text'
 							placeholder='Title of study'
 							name='study'
 							onChange={handleChange}
 							value={study}
-							required
 						/>
-					</label>
-					<label>
-						<p>From:</p>
-						<input
+						<Input
+							paragraphText="From:"
 							type='date'
 							name='from'
 							placeholder='From'
 							onChange={handleChange}
 							value={from}
-							required
 						/>
-					</label>
-
-					<label>
-						<p>To:</p>
-						<input
+						<Input
+							paragraphText="To:"
 							type='date'
 							name='to'
 							placeholder='To'
 							onChange={handleChange}
 							value={to}
-							required
 						/>
-					</label>
 					<button className='formBtn'>Save</button>
 					<button
 						className='formBtn'

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Print, NoPrint } from 'react-easy-print';
+import Input from './Input';
 import TextSection from './TextSection.js';
 
 const ExpirienceSection = (props) => {
@@ -46,53 +47,29 @@ const ExpirienceSection = (props) => {
 			</Print>
 			<section>
 				<form action='' className='section xpSection' onSubmit={handleSubmit}>
-					<label>
-						<p>Company Name:</p>
-						<input
-							type='text'
-							placeholder='Company Name'
-							name='companyName'
-							onChange={handleChange}
-							value={companyName}
-							required
-						/>
-					</label>
 
-					<label>
-						<p>Position Title:</p>
-						<input
-							type='text'
-							placeholder='Position Title'
-							name='position'
-							onChange={handleChange}
-							value={position}
-							required
-						/>
-					</label>
+					<Input paragraphText="Company Name:" type="text" placeholder='Company Name' name='companyName' onChange={handleChange} value={companyName}/>
 
-					<label>
-						<p>From:</p>
-						<input
-							type='date'
-							name='from'
-							placeholder='From'
-							onChange={handleChange}
-							value={from}
-							required
-						/>
-					</label>
+					<Input paragraphText="Position Title:" type='text' placeholder='Position Title' name='position' onChange={handleChange} value={position}/>
 
-					<label>
-						<p>To:</p>
-						<input
-							type='date'
-							name='to'
-							placeholder='To'
-							onChange={handleChange}
-							value={to}
-							required
-						/>
-					</label>
+					<Input
+						paragraphText="From:"
+						type='date'
+						name='from'
+						placeholder='From'
+						onChange={handleChange}
+						value={from}
+					/>
+
+					<Input
+						paragraphText="To:"
+						type='date'
+						name='to'
+						placeholder='To'
+						onChange={handleChange}
+						value={to}
+					/>
+					
 					<textarea
 						name='tasks'
 						className='tasks'

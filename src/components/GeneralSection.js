@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NoPrint, Print } from 'react-easy-print';
+import Input from './Input';
 import TextSection from './TextSection';
 
 const GeneralSection = () => {
@@ -45,52 +46,15 @@ const GeneralSection = () => {
 			</Print>
 			<section className='generalSection'>
 				<form className='section' action='' onSubmit={handleSubmit}>
-					<label>
-						<p>First Name:</p>
-						<input
-							type='text'
-							placeholder='First Name'
-							name='firstName'
-							onChange={handleChange}
-							value={firstName}
-							required
-						/>
-					</label>
 
-					<label>
-						<p>Last Name:</p>
-						<input
-							type='text'
-							placeholder='Last Name'
-							name='lastName'
-							onChange={handleChange}
-							value={lastName}
-							required
-						/>
-					</label>
+					<Input paragraphText="First Name:" type="text" placeholder='First Name' name='firstName' onChange={handleChange} value={firstName}/>
 
-					<label>
-						<p>Email:</p>
-						<input
-							type='email'
-							placeholder='example@gmail.com'
-							name='email'
-							onChange={handleChange}
-							value={email}
-							required
-						/>
-					</label>
-					<label>
-						<p>Phone Number:</p>
-						<input
-							type='tel'
-							name='phone'
-							placeholder='123-456-7890'
-							onChange={handleChange}
-							value={phone}
-							required
-						/>
-					</label>
+					<Input paragraphText="Last Name:" type="text" placeholder='Last Name' name='lastName' onChange={handleChange} value={lastName}/>
+
+					<Input paragraphText="Email:" type="email" placeholder='example@gmail.com' name='email' onChange={handleChange} value={email}/>
+
+					<Input paragraphText="Phone Number:" type="tel" placeholder='123-456-7890' name='phone' onChange={handleChange} value={phone}/>
+
 					<button className='formBtn generalBtn' type='submit'>
 						Save
 					</button>
